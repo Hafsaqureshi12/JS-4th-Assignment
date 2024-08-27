@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Electric Bill Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input, button {
+            margin: 10px 0;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <h1>K-Electric Bill Generator</h1>
+
+    <label for="customerName">Customer Name:</label><br>
+    <input type="text" id="customerName"><br>
+
+    <label for="currentMonth">Current Month:</label><br>
+    <input type="text" id="currentMonth" value=""><br>
+
+    <label for="units">Number of Units:</label><br>
+    <input type="number" id="units" step="0.01"><br>
+
+    <label for="chargePerUnit">Charges per Unit (in PKR):</label><br>
+    <input type="number" id="chargePerUnit" step="0.01"><br>
+
+    <label for="latePaymentSurcharge">Late Payment Surcharge (in PKR):</label><br>
+    <input type="number" id="latePaymentSurcharge" step="0.01"><br>
+
+    <button onclick="generateBill()">Generate Bill</button>
+
+    <div id="bill" class="result"></div>
+
+    <script>
+        function generateBill() {
+            const customerName = document.getElementById('customerName').value;
+            const currentMonth = document.getElementById('currentMonth').value || new Date().toLocaleString('default', { month: 'long' });
+            const units = Number(document.getElementById('units').value);
+            const chargePerUnit = Number(document.getElementById('chargePerUnit').value);
+            const latePaymentSurcharge = Number(document.getElementById('latePaymentSurcharge').value);
+
+            // Calculating Net Amount Payable (within Due Date)
+            const netAmountPayable = (units * chargePerUnit).toFixed(2);
+
+            // Calculating Gross Amount Payable (after Due Date)
+            const grossAmountPayable = (parseFloat(netAmountPayable) + latePaymentSurcharge).toFixed(2);
+
+            // Displaying the bill
+            document.getElementById('bill').innerHTML = `
+                <h3>Bill Details</h3>
+                <p>Customer Name: ${customerName}</p>
+                <p>Current Month: ${currentMonth}</p>
+                <p>Number of Units: ${units}</p>
+                <p>Charges per Unit: PKR ${chargePerUnit}</p>
+                <p>Net Amount Payable (within Due Date): PKR ${netAmountPayable}</p>
+                <p>Late Payment Surcharge: PKR ${latePaymentSurcharge}</p>
+                <p>Gross Amount Payable (after Due Date): PKR ${grossAmountPayable}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

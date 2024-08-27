@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 1. Display current date & time in the browser -->
+        <h1>Function of Current Date and Time:</h1>
+        <p id="currentTime"></p>
+
+    <!-- 2. Form to take first & last name and greet the user -->
+        <h1>Function of First and Last Name:</h1>
+    <form onsubmit="greetUser(event)">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+
+        <input type="submit" value="Greet Me!">
+    </form>
+    <p id="greetingMessage"></p>
+
+    <!-- 3. Write a function that adds two numbers (input by user)
+and returns the sum of two numbers. -->
+
+        <h1>Function of The Sum of Two Num:</h1>
+    <form onsubmit="sumoftwonum(event)">
+        <label for="number1">Number 1:</label>
+        <input type="text" id="number1" name="number1" required><br><br>
+
+        <label for="number2">Number 2:</label>
+        <input type="text" id="number2" name="number2" required><br><br>
+
+        <input type="submit" value="Add">
+    </form>
+    <p id="Result"></p>
+
+    <!-- 4. Calculator: -->
+    <h1>Simple Calculator</h1>
+    
+    <form onsubmit="return calculateResult(event)">
+        <label for="num1">Number 1:</label>
+        <input type="number" id="num1" required><br><br>
+
+        <label for="num2">Number 2:</label>
+        <input type="number" id="num2" required><br><br>
+
+        <label for="operator">Operator:</label>
+        <select id="operator" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+    
+    <p id="result"></p>
+
+    <!-- 5. Write a function that squares its argument. -->
+
+    <h1>Square Calculator:</h1>
+    <label for="number">Number:</label>
+    <input type="number" id="number" placeholder="Enter a num">
+    <button onclick="calculatesquare()">Calculate Square</button>
+
+    <p id="RESULT"></p>
+
+    <!-- 6. Write a function that computes factorial of a number. -->
+
+    <h1>Factorial Calculator</h1>
+    
+    <label for="number">Number:</label>
+    <input type="number" id="number" placeholder="Enter a number" min="0">
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    
+    <p id="result"></p>
+
+    <!-- 7. Write a function that take start and end number as inputs
+    & display counting in your browser. -->
+
+    <h1>Counting</h1>
+    <input type="number" id="start" placeholder="Start Number">
+    <input type="number" id="end" placeholder="End Number">
+    <button onclick="displayCounting()">Start Counting</button>
+    <div id="ResulT"></div>
+
+    <!-- 8. Write a nested function that computes hypotenuse of a
+    right angle triangle.
+    Hypotenuse2 = Base2 + Perpendicular2 -->
+
+    <h1>Hypotenuse Calculator</h1>
+
+    <label for="base">Base:</label>
+    <input type="number" id="base"><br><br>
+
+    <label for="perpendicular">Perpendicular:</label>
+    <input type="number" id="perpendicular"><br><br>
+
+    <button onclick="calculateHypotenuse()">Calculate Hypotenuse</button>
+
+    <p id="resuLt"></p>
+
+    <!-- 9. Write a function that calculates the area of a rectangle.
+    A = width * height
+    Pass width and height in following manner:- -->
+
+    <h1>Rectangle Area Calculator</h1>
+    <label for="width">Width:</label>
+    <input type="number" id="width"><br><br>
+
+    <label for="height">Height:</label>
+    <input type="number" id="height"><br><br>
+    <button onclick="calculateAreaUsingValues()">Calculate Area (Using Values)</button>
+    <button onclick="calculateAreaUsingVariables()">Calculate Area (Using Variables)</button>
+    <!-- Display results -->
+    <p id="resultValues"></p>
+    <p id="resultVariables"></p>
+
+    <!-- 10. Write a JavaScript function that checks whether a passed
+    string is palindrome or not?
+    A palindrome is word, phrase, or sequence that reads the same backward as
+    forward, e.g., madam. -->
+
+    <h1>Palindrome Checker</h1>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString"><br><br>
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+
+    <p id="reSult"></p>
+
+    <!-- 11. Write a JavaScript function that accepts a string as a
+    parameter and converts the first letter of each word of the
+    string in upper case. -->
+
+    <h1>String As Parameter</h1>
+
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString"><br><br>
+    <button onclick="capitalizeWords()">Capitalize</button>
+
+    <p id="resUlt"></p>
+
+    <!-- 12. Write a JavaScript function that accepts a string as a
+    parameter and find the longest word within the string. -->
+
+    <h1>Find the Longest Word</h1>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString"><br><br>
+    <button onclick="findLongestWord()">Find Longest Word</button>
+
+    <p id="rEsult1"></p>
+
+    <!-- 13. Write a JavaScript function that accepts two arguments, a
+    string and a letter and the function will count the number of
+    occurrences of the specified letter within the string. -->
+
+    <h1>Count Occurrences of a Letter</h1>
+    <label for="inputString">Enter a string:</label>
+    <input type="text" id="inputString"><br><br>
+    <label for="inputLetter">Enter a letter:</label>
+    <input type="text" id="inputLetter" maxlength="1"><br><br>
+    <button onclick="countOccurrences()">Count Occurrences</button>
+
+    <p id="REsult"></p>
+
+    <!-- The Geometrizer
+    Create 2 functions that calculate properties of a circle, using
+    the definitions here. -->
+
+    <h1>The Geometrizer</h1>
+    <label for="radius">Enter the radius:</label>
+    <input type="number" id="radius" step="any"><br><br>
+    <button onclick="calcCircumference()">Calculate Circumference</button>
+    <button onclick="calcArea()">Calculate Area</button>
+
+    <p id="circumferenceResult"></p>
+    <p id="areaResult"></p>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="35-38.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
